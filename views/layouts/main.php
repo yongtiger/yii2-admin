@@ -1,58 +1,72 @@
-<?php
+<?php ///[yii2-admin release version 1.2.0 (Layout:main, main-login)]
 
-use yii\bootstrap\NavBar;
-use yii\bootstrap\Nav;
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
+
+/**
+ * @var $this yii\base\View
+ * @var $content string
+ */
+
 use yii\helpers\Html;
 
-/* @var $this \yii\web\View */
-/* @var $content string */
+///[yii2-admin release version 1.2.0 (Layout:main, main-login)]register AppAsset in advanced or basic template
+if (class_exists('backend\assets\AppAsset')) {
+    call_user_func('backend\assets\AppAsset::register', $this);
+} else {
+    call_user_func('app\assets\AppAsset::register', $this);
+}
 
-list(,$url) = Yii::$app->assetManager->publish('@yongtiger/admin/assets');
-$this->registerCssFile($url.'/main.css');
-?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="en">
+if ($this->context->action->id === 'login') { 
+
+    echo $this->render(
+        'main-login',
+        ['content' => $content]
+    );
+    
+} else { ?>
+
+    <?php $this->beginPage() ?>
+
+    <!DOCTYPE html>
+    <html lang="<?= \Yii::$app->language ?>">
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="<?= \Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
     <body>
-        <?php $this->beginBody() ?>
-        <?php
-        NavBar::begin([
-            'brandLabel' => false,
-            'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
-        ]);
+    
+    <?php $this->beginBody() ?>
+        <div class="wrap">
 
-        if (!empty($this->params['top-menu']) && isset($this->params['nav-items'])) {
-            echo Nav::widget([
-                'options' => ['class' => 'nav navbar-nav'],
-                'items' => $this->params['nav-items'],
-            ]);
-        }
+            <?= $this->render(
+                'header.php'
+            ) ?>
 
-        echo Nav::widget([
-            'options' => ['class' => 'nav navbar-nav navbar-right'],
-            'items' => $this->context->module->navbar,
-         ]);
-        NavBar::end();
-        ?>
+            <?= $this->render(
+                'content.php',
+                ['content' => $content]
+            ) ?>
 
-        <div class="container">
-            <?= $content ?>
         </div>
 
-        <footer class="footer">
-            <div class="container">
-                <p class="pull-right"><?= Yii::powered() ?></p>
-            </div>
-        </footer>
+        <?= $this->render(
+            'footer.php'
+        ) ?>
 
-        <?php $this->endBody() ?>
+    <?php $this->endBody() ?>
     </body>
-</html>
-<?php $this->endPage() ?>
+    </html>
+    <?php $this->endPage() ?>
+
+<?php } ?>

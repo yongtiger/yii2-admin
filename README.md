@@ -1,4 +1,4 @@
-# Yii2 admin release version 1.1.1
+# Yii2 admin release version 1.2.0 (Layout:main, main-login, content, footer, header)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 
@@ -17,7 +17,7 @@ GUI manager for RABC (Role Base Access Control) Yii2. Easy to manage authorizati
   - FIX# menu display order
   - FIX# admin:permission_access_backend
   - FIX# admin:return home when guest accesses an invalid route
-
+* Layout:main, main-login
 
 ## REQUIREMENTS
 
