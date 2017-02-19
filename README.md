@@ -1,4 +1,4 @@
-# Yii2 admin release version 1.0.0
+# Yii2 admin release version 1.1.0
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 
@@ -15,6 +15,7 @@ GUI manager for RABC (Role Base Access Control) Yii2. Easy to manage authorizati
   - FIX# menu autocomplete when using mdmsoft/yii2-admin multi app
   - FIX# autocomplete parent of creating&updating menu
   - FIX# menu display order
+  - FIX# admin:permission_access_backend
 
 
 ## REQUIREMENTS
