@@ -16,10 +16,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-
-    ///\vendor\yongtiger\yii2-admin\components\AccessControl.php
-    'Error! No permission to access backend.' => '没有登陆后台权限',
-
     'Assignments' => '分配',
     'Users' => '用户列表',
     'User' => '用户',

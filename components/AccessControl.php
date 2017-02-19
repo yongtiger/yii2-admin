@@ -96,6 +96,12 @@ class AccessControl extends \yii\base\ActionFilter
     {
         $uniqueId = $action->getUniqueId();
         if ($uniqueId === Yii::$app->getErrorHandler()->errorAction) {
+
+            ///[yii2-admin 1.1.1 (admin:return home when guest accesses an invalid route)]
+            if (Yii::$app->user->isGuest) {
+                //$this->goHome()->send();  ///while in controller!
+                Yii::$app->getResponse()->redirect(Yii::$app->getHomeUrl())->send();
+            }
             return false;
         }
 
