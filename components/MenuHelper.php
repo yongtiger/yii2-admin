@@ -203,6 +203,7 @@ class MenuHelper
             if ($menu['parent'] == $parent) {
                 $menu['children'] = static::normalizeMenu($assigned, $menus, $callback, $id);
                 if ($callback !== null) {
+                    $menu['route'] = static::parseRoute($menu['route']);    ///[yii2-brainbase v0.4.4 (admin:fix# mdmsoft/yii2-admin multi app)]
                     $item = call_user_func($callback, $menu);
                 } else {
                     $item = [
