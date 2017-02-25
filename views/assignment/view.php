@@ -1,10 +1,8 @@
 <?php
 
-use yongtiger\admin\AnimateAsset;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
-use yii\web\YiiAsset;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\Assignment */
@@ -21,8 +19,6 @@ $this->title = Yii::t('rbac-admin', 'Assignment') . ' : ' . $userName;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Assignments'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $userName;
 
-AnimateAsset::register($this);
-YiiAsset::register($this);
 $opts = Json::htmlEncode([
     'items' => $model->getItems(),
 ]);

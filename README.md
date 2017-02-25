@@ -1,4 +1,4 @@
-# Yii2 admin release version 1.2.0 (Layout:main, main-login, content, footer, header)
+# Yii2 admin release version 2.0.0 (reconstruction)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 

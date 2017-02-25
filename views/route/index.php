@@ -1,9 +1,7 @@
 <?php
 
-use yongtiger\admin\AnimateAsset;
 use yii\helpers\Html;
 use yii\helpers\Json;
-use yii\web\YiiAsset;
 
 /* @var $this yii\web\View */
 /* @var $routes [] */
@@ -11,8 +9,6 @@ use yii\web\YiiAsset;
 $this->title = Yii::t('rbac-admin', 'Routes');
 $this->params['breadcrumbs'][] = $this->title;
 
-AnimateAsset::register($this);
-YiiAsset::register($this);
 $opts = Json::htmlEncode([
     'routes' => $routes,
 ]);

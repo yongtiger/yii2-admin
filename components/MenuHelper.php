@@ -1,4 +1,14 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\components;
 
@@ -9,7 +19,7 @@ use yongtiger\admin\models\Route;
 
 /**
  * MenuHelper used to generate menu depend of user role.
- * Usage
+ * Usage:
  *
  * ```
  * use yongtiger\admin\components\MenuHelper;
@@ -37,8 +47,7 @@ use yongtiger\admin\models\Route;
  * $items = MenuHelper::getAssignedMenu(Yii::$app->user->id, null, $callback);
  * ```
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\components
  */
 class MenuHelper
 {

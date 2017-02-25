@@ -2,14 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yongtiger\admin\models\Menu;
 use yii\helpers\Json;
-use yongtiger\admin\AutocompleteAsset;
+use yii\jui\JuiAsset;
+use yongtiger\admin\models\Menu;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\Menu */
 /* @var $form yii\widgets\ActiveForm */
-AutocompleteAsset::register($this);
+JuiAsset::register($this);
 $opts = Json::htmlEncode([
         'menus' => Menu::getMenuSource(),
         'routes' => Menu::getSavedRoutes(),

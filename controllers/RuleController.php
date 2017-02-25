@@ -1,4 +1,14 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\controllers;
 
@@ -12,10 +22,9 @@ use yongtiger\admin\components\Helper;
 use yongtiger\admin\components\Configs;
 
 /**
- * Description of RuleController
+ * Class RuleController
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\controllers
  */
 class RuleController extends Controller
 {

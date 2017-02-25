@@ -1,4 +1,14 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\controllers;
 
@@ -8,10 +18,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 
 /**
- * Description of RuleController
+ * Class RuleController
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\controllers
  */
 class RouteController extends Controller
 {
@@ -29,6 +38,7 @@ class RouteController extends Controller
             ],
         ];
     }
+    
     /**
      * Lists all Route models.
      * @return mixed

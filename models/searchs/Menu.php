@@ -1,4 +1,14 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\models\searchs;
 
@@ -10,8 +20,7 @@ use yongtiger\admin\models\Menu as MenuModel;
 /**
  * Menu represents the model behind the search form about [[\yongtiger\admin\models\Menu]].
  * 
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\models\searchs
  */
 class Menu extends MenuModel
 {

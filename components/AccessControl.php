@@ -1,12 +1,22 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\components;
 
-use yii\web\ForbiddenHttpException;
-use yii\base\Module;
 use Yii;
-use yii\web\User;
 use yii\di\Instance;
+use yii\base\Module;
+use yii\web\User;
+use yii\web\ForbiddenHttpException;
 
 /**
  * Access Control Filter (ACF) is a simple authorization method that is best used by applications that only need some simple access control. 
@@ -23,10 +33,8 @@ use yii\di\Instance;
  * ]
  * ```
  *
- * @property User $user
+ * @package yongtiger\admin\components
  * 
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
  */
 class AccessControl extends \yii\base\ActionFilter
 {
@@ -34,6 +42,7 @@ class AccessControl extends \yii\base\ActionFilter
      * @var User User for check access.
      */
     private $_user = 'user';
+
     /**
      * @var array List of action that not need to check access.
      */
@@ -41,7 +50,7 @@ class AccessControl extends \yii\base\ActionFilter
 
     /**
      * Get user
-     * @return User
+     * @return yii\web\User
      */
     public function getUser()
     {
@@ -53,7 +62,7 @@ class AccessControl extends \yii\base\ActionFilter
 
     /**
      * Set user
-     * @param User|string $user
+     * @param User $user
      */
     public function setUser($user)
     {
@@ -100,7 +109,10 @@ class AccessControl extends \yii\base\ActionFilter
             ///[yii2-admin 1.1.1 (admin:return home when guest accesses an invalid route)]
             if (Yii::$app->user->isGuest) {
                 //$this->goHome()->send();  ///while in controller!
-                Yii::$app->getResponse()->redirect(Yii::$app->getHomeUrl())->send();
+                // Yii::$app->getResponse()->redirect(Yii::$app->user->loginUrl)->send();   ///ok!
+                Yii::$app->getResponse()->redirect(Yii::$app->user->loginUrl);
+                // Yii::$app->user->loginRequired();   ///ok!
+                Yii::$app->end();   ///exit immediately and terminate subsequent code execution
             }
             return false;
         }
@@ -123,9 +135,11 @@ class AccessControl extends \yii\base\ActionFilter
                     if (!Yii::$app->user->can('permission_access_backend')) {
                         Yii::$app->getSession()->setFlash('error', Yii::t('yii', 'You are not allowed to perform this action.'));
                         //$this->goHome()->send();  ///while in controller!
-                        Yii::$app->getResponse()->redirect(Yii::$app->getHomeUrl())->send();
-                        $event->handled = true;
+                        // Yii::$app->getResponse()->redirect(Yii::$app->user->loginUrl)->send();   ///ok!
+                        Yii::$app->getResponse()->redirect(Yii::$app->user->loginUrl);
+                        // Yii::$app->user->loginRequired();    ///wrong!
                         Yii::$app->end();   ///exit immediately and terminate subsequent code execution
+                        $event->handled = true;
                     }
                 });
                 
@@ -146,7 +160,7 @@ class AccessControl extends \yii\base\ActionFilter
 
         foreach ($this->allowActions as $route) {
             if (substr($route, -1) === '*') {
-                $route = rtrim($route, "*");
+                $route = rtrim($route, '*');
                 if ($route === '' || strpos($id, $route) === 0) {
                     return false;
                 }

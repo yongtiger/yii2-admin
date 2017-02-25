@@ -1,17 +1,28 @@
 <?php ///[yii2-brainbase v0.3.0 (admin:rbac):fix Added multi app (frontend/backend)]@see https://github.com/mdmsoft/yii2-admin/pull/309/
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
+
 namespace yongtiger\admin\models;
-use Exception;
-use yongtiger\admin\components\Configs;
-use yongtiger\admin\components\Helper;
-use yongtiger\admin\components\RouteRule;
+
 use Yii;
 use yii\caching\TagDependency;
 use yii\helpers\VarDumper;
+use yongtiger\admin\components\Configs;
+use yongtiger\admin\components\Helper;
+use yongtiger\admin\components\RouteRule;
+
 /**
- * Description of Route
+ * Class Route
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\models
  */
 class Route extends \yii\base\Object
 {
@@ -53,12 +64,13 @@ class Route extends \yii\base\Object
                 } else {
                     $manager->add($item);
                 }
-            } catch (Exception $exc) {
+            } catch (\Exception $exc) {
                 Yii::error($exc->getMessage(), __METHOD__);
             }
         }
         Helper::invalidate();
     }
+
     /**
      * Assign or remove items
      * @param array $routes
@@ -71,7 +83,7 @@ class Route extends \yii\base\Object
             try {
                 $item = $manager->createPermission($this->getPermissionName($route));   ///[yii2-brainbase v0.3.0 (admin:rbac):fix Added multi app (frontend/backend)]@see https://github.com/mdmsoft/yii2-admin/pull/309/
                 $manager->remove($item);
-            } catch (Exception $exc) {
+            } catch (\Exception $exc) {
                 Yii::error($exc->getMessage(), __METHOD__);
             }
         }
@@ -90,6 +102,7 @@ class Route extends \yii\base\Object
         }
         return $this->_routePrefix;
     }
+
     /**
      * Returns the correct permission name depending on the configuration.
      * @param  string $route Route
@@ -203,6 +216,7 @@ class Route extends \yii\base\Object
         }
         return $result;
     }
+
     /**
      * Get route(s) recursive
      * @param \yii\base\Module $module
@@ -230,6 +244,7 @@ class Route extends \yii\base\Object
         }
         Yii::endProfile($token, __METHOD__);
     }
+
     /**
      * Get list controller under module
      * @param \yii\base\Module $module
@@ -268,6 +283,7 @@ class Route extends \yii\base\Object
         }
         Yii::endProfile($token, __METHOD__);
     }
+
     /**
      * Get list action of controller
      * @param mixed $type
@@ -290,6 +306,7 @@ class Route extends \yii\base\Object
         }
         Yii::endProfile($token, __METHOD__);
     }
+
     /**
      * Get route of action
      * @param \yii\base\Controller $controller
@@ -318,6 +335,7 @@ class Route extends \yii\base\Object
         }
         Yii::endProfile($token, __METHOD__);
     }
+
     /**
      * Ivalidate cache
      */
@@ -327,6 +345,7 @@ class Route extends \yii\base\Object
             TagDependency::invalidate(Configs::cache(), self::CACHE_TAG);
         }
     }
+    
     /**
      * Set default rule of parameterize route.
      */

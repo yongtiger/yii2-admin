@@ -2,15 +2,15 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yongtiger\admin\components\RouteRule;
-use yongtiger\admin\AutocompleteAsset;
+use yii\jui\JuiAsset;
 use yii\helpers\Json;
 use yongtiger\admin\components\Configs;
+use yongtiger\admin\components\RouteRule;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\AuthItem */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $context yongtiger\admin\components\ItemController */
+/* @var $context yongtiger\admin\controllers\ItemController */
 
 $context = $this->context;
 $labels = $context->labels();
@@ -23,7 +23,7 @@ $js = <<<JS
         source: $source,
     });
 JS;
-AutocompleteAsset::register($this);
+JuiAsset::register($this);
 $this->registerJs($js);
 ?>
 

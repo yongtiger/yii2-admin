@@ -1,4 +1,14 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\models;
 
@@ -20,8 +30,7 @@ use yii\rbac\Item;
  *
  * @property Item $item
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\models
  */
 class AuthItem extends Model
 {
@@ -30,6 +39,7 @@ class AuthItem extends Model
     public $description;
     public $ruleName;
     public $data;
+    
     /**
      * @var Item
      */

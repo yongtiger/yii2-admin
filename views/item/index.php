@@ -8,7 +8,7 @@ use yongtiger\admin\components\Configs;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel yongtiger\admin\models\searchs\AuthItem */
-/* @var $context yongtiger\admin\components\ItemController */
+/* @var $context yongtiger\admin\controllers\ItemController */
 
 $context = $this->context;
 $labels = $context->labels();

@@ -1,22 +1,52 @@
 <?php ///[yii2-brainbase v0.3.0 (admin:rbac):fix Added multi app (frontend/backend)]@see https://github.com/mdmsoft/yii2-admin/pull/309/
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
+
 namespace yongtiger\admin\components;
-use yongtiger\admin\models\Route;
+
 use Yii;
 use yii\caching\TagDependency;
 use yii\helpers\ArrayHelper;
 use yii\web\User;
+use yongtiger\admin\models\Route;
 
 /**
- * Description of Helper
+ * Class Helper
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 2.3
+ * @package yongtiger\admin\components
  */
 class Helper
 {
+    /**
+     * User routes
+     * @var array
+     */
     private static $_userRoutes = [];
+
+    /**
+     * Default routes
+     * @var array
+     */
     private static $_defaultRoutes;
+
+    /**
+     * Routes
+     * @var array
+     */
     private static $_routes;
+
+    /**
+     * Get registered routes
+     * @return array
+     */
     public static function getRegisteredRoutes()
     {
         if (self::$_routes === null) {
@@ -30,6 +60,7 @@ class Helper
         }
         return self::$_routes;
     }
+
     /**
      * Get assigned routes by default roles
      * @return array
@@ -61,6 +92,7 @@ class Helper
         }
         return self::$_defaultRoutes;
     }
+
     /**
      * Get assigned routes of user.
      * @param integer $userId
@@ -90,6 +122,7 @@ class Helper
         }
         return self::$_userRoutes[$userId];
     }
+
     /**
      * Check access route for user.
      * @param string|array $route
@@ -118,7 +151,7 @@ class Helper
                     return true;
                 }
             }
-            return $user->can('/*', $params);   ///?????
+            return $user->can('/*', $params);
         } else {
             $routes = static::getRoutesByUser($userId);
             if (isset($routes[$r])) {
@@ -130,7 +163,7 @@ class Helper
                     return true;
                 }
             }
-            return isset($routes['/*']);    ///?????
+            return isset($routes['/*']);
         }
     }
 
@@ -174,6 +207,7 @@ class Helper
         }
         return static::filterRecursive($items, $user);
     }
+
     /**
      * Filter menu recursive
      * @param array $items
@@ -200,6 +234,7 @@ class Helper
         }
         return $result;
     }
+
     /**
      * Filter action column button. Use with [[yii\grid\GridView]]
      * ```php
@@ -230,6 +265,7 @@ class Helper
             return static::checkRoute($matches[1], [], $user) ? "{{$matches[1]}}" : '';
         }, $buttons);
     }
+
     /**
      * Use to invalidate cache.
      */

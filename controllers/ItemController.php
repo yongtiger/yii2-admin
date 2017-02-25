@@ -1,24 +1,35 @@
-<?php
+<?php ///[yii2-admin]
 
-namespace yongtiger\admin\components;
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
+
+namespace yongtiger\admin\controllers;
 
 use Yii;
-use yongtiger\admin\models\AuthItem;
-use yongtiger\admin\models\searchs\AuthItem as AuthItemSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\base\NotSupportedException;
 use yii\filters\VerbFilter;
 use yii\rbac\Item;
+use yongtiger\admin\components\Configs;
+use yongtiger\admin\components\Helper;
+use yongtiger\admin\models\AuthItem;
+use yongtiger\admin\models\searchs\AuthItem as AuthItemSearch;
 
 /**
- * AuthItemController implements the CRUD actions for AuthItem model.
+ * ItemController implements the CRUD actions for AuthItem model.
  *
  * @property integer $type
  * @property array $labels
  * 
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\controllers
  */
 class ItemController extends Controller
 {

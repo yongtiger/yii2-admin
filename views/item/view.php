@@ -1,14 +1,12 @@
 <?php
 
-use yongtiger\admin\AnimateAsset;
 use yii\helpers\Html;
 use yii\helpers\Json;
-use yii\web\YiiAsset;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\AuthItem */
-/* @var $context yongtiger\admin\components\ItemController */
+/* @var $context yongtiger\admin\controllers\ItemController */
 
 $context = $this->context;
 $labels = $context->labels();
@@ -16,8 +14,6 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', $labels['Items']), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
-AnimateAsset::register($this);
-YiiAsset::register($this);
 $opts = Json::htmlEncode([
     'items' => $model->getItems(),
 ]);

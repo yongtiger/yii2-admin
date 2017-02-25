@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\AuthItem */
-/* @var $context yongtiger\admin\components\ItemController */
+/* @var $context yongtiger\admin\controllers\ItemController */
 
 $context = $this->context;
 $labels = $context->labels();

@@ -1,14 +1,23 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\components;
 
 use yii\rbac\Rule;
 
 /**
- * Description of GuestRule
+ * Class GuestRule
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 2.5
+ * @package yongtiger\admin\components
  */
 class GuestRule extends Rule
 {

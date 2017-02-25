@@ -1,5 +1,17 @@
 <?php ///[yii2-brainbase v0.3.0 (admin:rbac):fix Added multi app (frontend/backend)]@see https://github.com/mdmsoft/yii2-admin/pull/309/
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
+
 namespace yongtiger\admin\components;
+
 use Yii;
 use yii\caching\Cache;
 use yii\db\Connection;
@@ -7,8 +19,10 @@ use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\rbac\ManagerInterface;
 use yongtiger\admin\models\Route;
+
 /**
- * Configs
+ * Class Configs
+ *
  * Used to configure some values. To set config you can use [[\yii\base\Application::$params]]
  *
  * ```
@@ -34,52 +48,47 @@ use yongtiger\admin\models\Route;
  * ]);
  * ```
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\components
  */
 class Configs extends \yii\base\Object
 {
     const CACHE_TAG = 'yongtiger.admin';
+
     /**
      * @var ManagerInterface .
      */
     public $authManager = 'authManager';
+
     /**
      * @var Connection Database connection.
      */
     public $db = 'db';
-    /**
-     * @var Connection Database connection.
-     */
-    public $userDb = 'db';
+
     /**
      * @var Cache Cache component.
      */
     public $cache = 'cache';
+
     /**
      * @var integer Cache duration. Default to a hour.
      */
     public $cacheDuration = 3600;
+
     /**
      * @var string Menu table name.
      */
     public $menuTable = '{{%menu}}';
-    /**
-     * @var string Menu table name.
-     */
-    public $userTable = '{{%user}}';
-    /**
-     * @var integer Default status user signup. 10 mean active.
-     */
-    public $defaultUserStatus = 10;
+
     /**
      * @var boolean If true then AccessControl only check if route are registered.
      */
     public $onlyRegisteredRoute = false;
+
     /**
      * @var boolean If false then AccessControl will check without Rule.
      */
     public $strict = true;
+
     /**
      * @var array
      */
@@ -100,12 +109,16 @@ class Configs extends \yii\base\Object
      * @var self Instance of self
      */
     private static $_instance;
+
+    /**
+     * @var array
+     */
     private static $_classes = [
         'db' => 'yii\db\Connection',
-        'userDb' => 'yii\db\Connection',
         'cache' => 'yii\caching\Cache',
         'authManager' => 'yii\rbac\ManagerInterface',
     ];
+
     /**
      * @inheritdoc
      */
@@ -123,6 +136,7 @@ class Configs extends \yii\base\Object
         ///[yii2-brainbase v0.4.4 (admin:fix# mdmsoft/yii2-admin multi app)]
         $this->routePrefix = $this->advanced ? Route::PREFIX_ADVANCED : Route::PREFIX_BASIC;
     }
+
     /**
      * Create instance of self
      * @return static
@@ -138,6 +152,10 @@ class Configs extends \yii\base\Object
         }
         return self::$_instance;
     }
+
+    /**
+     * @inheritdoc
+     */
     public static function __callStatic($name, $arguments)
     {
         $instance = static::instance();
@@ -151,6 +169,7 @@ class Configs extends \yii\base\Object
             }
         }
     }
+
     /**
      * @return Connection
      */
@@ -158,13 +177,7 @@ class Configs extends \yii\base\Object
     {
         return static::instance()->db;
     }
-    /**
-     * @return Connection
-     */
-    public static function userDb()
-    {
-        return static::instance()->userDb;
-    }
+
     /**
      * @return Cache
      */
@@ -172,6 +185,7 @@ class Configs extends \yii\base\Object
     {
         return static::instance()->cache;
     }
+
     /**
      * @return ManagerInterface
      */
@@ -179,6 +193,7 @@ class Configs extends \yii\base\Object
     {
         return static::instance()->authManager;
     }
+
     /**
      * @return integer
      */
@@ -186,6 +201,7 @@ class Configs extends \yii\base\Object
     {
         return static::instance()->cacheDuration;
     }
+
     /**
      * @return string
      */
@@ -193,20 +209,7 @@ class Configs extends \yii\base\Object
     {
         return static::instance()->menuTable;
     }
-    /**
-     * @return string
-     */
-    public static function userTable()
-    {
-        return static::instance()->userTable;
-    }
-    /**
-     * @return string
-     */
-    public static function defaultUserStatus()
-    {
-        return static::instance()->defaultUserStatus;
-    }
+
     /**
      * @return boolean
      */
@@ -214,6 +217,7 @@ class Configs extends \yii\base\Object
     {
         return static::instance()->onlyRegisteredRoute;
     }
+
     /**
      * @return boolean
      */

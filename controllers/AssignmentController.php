@@ -1,4 +1,14 @@
-<?php
+<?php ///[yii2-admin]
+
+/**
+ * Yii2 admin
+ *
+ * @link        http://www.brainbook.cc
+ * @see         https://github.com/yongtiger/admin
+ * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
+ * @copyright   Copyright (c) 2017 BrainBook.CC
+ * @license     http://opensource.org/licenses/MIT
+ */
 
 namespace yongtiger\admin\controllers;
 
@@ -12,8 +22,7 @@ use yii\filters\VerbFilter;
 /**
  * AssignmentController implements the CRUD actions for Assignment model.
  *
- * @author Misbahul D Munir <misbahuldmunir@gmail.com>
- * @since 1.0
+ * @package yongtiger\admin\controllers
  */
 class AssignmentController extends Controller
 {
@@ -45,7 +54,6 @@ class AssignmentController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'assign' => ['post'],
                     'assign' => ['post'],
                     'revoke' => ['post'],
                 ],
