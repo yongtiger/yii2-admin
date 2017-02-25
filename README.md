@@ -1,24 +1,31 @@
-# yii2-adminlte-asset v0.0.6 (fix:main main-login)
+# Yii2 admin release version 2.1.0 (reconstruction)
 
-[![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-adminlte-asset/v/stable)](https://packagist.org/packages/yongtiger/yii2-adminlte-asset)
-[![Total Downloads](https://poser.pugx.org/yongtiger/yii2-adminlte-asset/downloads)](https://packagist.org/packages/yongtiger/yii2-adminlte-asset) 
-[![Latest Unstable Version](https://poser.pugx.org/yongtiger/yii2-adminlte-asset/v/unstable)](https://packagist.org/packages/yongtiger/yii2-adminlte-asset)
-[![License](https://poser.pugx.org/yongtiger/yii2-adminlte-asset/license)](https://packagist.org/packages/yongtiger/yii2-adminlte-asset)
+[![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
+[![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 
+[![Latest Unstable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/unstable)](https://packagist.org/packages/yongtiger/yii2-admin)
+[![License](https://poser.pugx.org/yongtiger/yii2-admin/license)](https://packagist.org/packages/yongtiger/yii2-admin)
+
+GUI manager for RABC (Role Base Access Control) Yii2. Easy to manage authorization of user
 
 
 ## FEATURES
 
-* Sample of extensions directory structure. `src`, `docs`, etc.
-* `README.md`
-* `composer.json`
-* `development-roadmap.md`
+* Admin: rbac, menu, defaultRoles
+* UPG# [mdmsoft/yii2-admin multi app](https://github.com/mdmsoft/yii2-admin/pull/309/)
+  - FIX# Yii debug disappear in route when using mdmsoft/yii2-admin multi app
+  - FIX# menu autocomplete when using mdmsoft/yii2-admin multi app
+  - FIX# autocomplete parent of creating&updating menu
+  - FIX# menu display order
+  - FIX# admin:permission_access_backend
+  - FIX# admin:return home when guest accesses an invalid route
+* Layout:main, main-login, content, footer, header
 
 
-## DEPENDENCES
+## REQUIREMENTS
 
-* "cebe/yii2-gravatar": "1.*",
-* "almasaeed2010/adminlte": "~2.0",
-* "rmrevin/yii2-fontawesome": "~2.9"
+* PHP 5.4.0+
+* Yii2 2.0.6+
+* Yii2 extension: [yiisoft/yii2-jui](https://github.com/yiisoft/yii2-jui), [JUI Extension for Yii 2](http://www.yiiframework.com/doc-2.0/ext-jui-index.html)
 
 
 ## INSTALLATION   
@@ -28,13 +35,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist yongtiger/yii2-adminlte-asset "*"
+php composer.phar require --prefer-dist yongtiger/yii2-admin "*"
 ```
 
 or add
 
 ```json
-"yongtiger/yii2-adminlte-asset": "*"
+"yongtiger/yii2-admin": "*"
 ```
 
 to the require section of your composer.json.
@@ -54,6 +61,9 @@ to the require section of your composer.json.
 
 ## REFERENCES
 
+- https://github.com/mdmsoft/yii2-admin
+- https://github.com/mdmsoft/yii2-admin/pull/309/
+
 
 ## SEE ALSO
 
@@ -65,4 +75,4 @@ to the require section of your composer.json.
 
 
 ## LICENSE 
-**yii2-adminlte-asset** is released under the MIT license, see [LICENSE](https://opensource.org/licenses/MIT) file for details.
+**yii2-admin** is released under the MIT license, see [LICENSE](https://opensource.org/licenses/MIT) file for details.

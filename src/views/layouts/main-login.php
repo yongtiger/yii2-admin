@@ -1,14 +1,4 @@
-<?php ///[yii2-adminlte-asset]
-
-/**
- * Yii2 adminlte asset
- *
- * @link        http://www.brainbook.cc
- * @see         https://github.com/yongtiger/adminlte-asset
- * @author      Tiger Yong <tigeryang.brainbook@outlook.com>
- * @copyright   Copyright (c) 2017 BrainBook.CC
- * @license     http://opensource.org/licenses/MIT
- */
+<?php ///[yii2-admin release version 1.2.0 (Layout:main, main-login)]
 
 /**
  * @var $this yii\base\View
@@ -16,7 +6,7 @@
  */
 
 use yii\helpers\Html;
-use yongtiger\adminlteasset\widgets\Alert;
+use common\widgets\Alert;
 
 ?>
 <?php $this->beginPage() ?>
