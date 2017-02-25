@@ -17,7 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'RBAC Admin' => 'RBAC Admin',
+    'RBAC' => 'RBAC',
     'Activate' => 'Activate',
     'Add' => 'Add',
     'Assignments' => 'Assignments',

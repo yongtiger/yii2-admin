@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'RBAC' => '權限控制',
     'Assignments' => '分配',
     'Users' => '用戶列表',
     'User' => '用戶',

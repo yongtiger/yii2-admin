@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations for \mdmsoft\yii2-admin.
  *
@@ -16,7 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'RBAC Admin' => '權限控制',
+    'RBAC' => '权限控制',
     'Assignments' => '分配',
     'Users' => '用户列表',
     'User' => '用户',
