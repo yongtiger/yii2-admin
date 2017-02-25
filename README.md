@@ -23,7 +23,7 @@ GUI manager for RABC (Role Base Access Control) Yii2. Easy to manage authorizati
 
 * PHP 5.4.0+
 * Yii2 2.0.6+
-* Yii2 extension(optional but very useful!): [yiisoft/yii2-jui](https://github.com/yiisoft/yii2-jui), [JUI Extension for Yii 2](http://www.yiiframework.com/doc-2.0/ext-jui-index.html)
+* Yii2 extension: [yiisoft/yii2-jui](https://github.com/yiisoft/yii2-jui), [JUI Extension for Yii 2](http://www.yiiframework.com/doc-2.0/ext-jui-index.html)
 
 
 ## INSTALLATION   
