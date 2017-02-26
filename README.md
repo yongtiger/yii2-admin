@@ -1,4 +1,4 @@
-# Yii2 admin release version 2.2.0 (view params)
+# Yii2 admin release version 2.3.0 (fix:main-login.php registerCss(".site-login"))
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 
