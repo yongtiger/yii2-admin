@@ -18,13 +18,13 @@ NavBar::begin([
     ],
 ]);
 $menuItems = [
-    ['label' => 'Home', 'url' => ['/site/index']],
+    ['label' => 'Home', 'url' => isset($this->params['homeUrl']) ? $this->params['homeUrl'] : ['/site/index']], ///[yii2-admin release version 2.2.0 (view params)]
 ];
 if (Yii::$app->user->isGuest) {
-    $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    $menuItems[] = ['label' => 'Login', 'url' => isset($this->params['loginUrl']) ? $this->params['loginUrl'] : ['/site/login']];   ///[yii2-admin release version 2.2.0 (view params)]
 } else {
     $menuItems[] = '<li>'
-        . Html::beginForm(['/site/logout'], 'post')
+        . Html::beginForm(isset($this->params['logoutUrl']) ? $this->params['logoutUrl'] : ['/site/logout'], 'post')    ///[yii2-admin release version 2.2.0 (view params)]
         . Html::submitButton(
             'Logout (' . \Yii::$app->user->identity->username . ')',
             ['class' => 'btn btn-link logout']

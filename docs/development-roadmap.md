@@ -1,13 +1,23 @@
 # Development roadmap
 
-## 2.1.0 (reconstruction)
+## 2.2.0 (view params)
 
-Features of this version:
+```php
+'view' => [
+    'params' => [
+        ///[yii2-admin release version 2.2.0 (view params)]
+        'homeUrl' => ['/site/index'],
+        'loginUrl' => ['/site/login'],
+        'logoutUrl' => ['/site/logout'],
+    ],
+    // ...
+]
+```
+
+## 2.1.0 (reconstruction)
 
 
 ## 2.0.0 (reconstruction)
-
-Features of this version:
 
 
 ## 1.2.0
