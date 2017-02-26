@@ -6,8 +6,6 @@
 'view' => [
     'params' => [
         ///[yii2-admin release version 2.2.0 (view params)]
-        'homeUrl' => ['/site/index'],
-        'loginUrl' => ['/site/login'],
         'logoutUrl' => ['/site/logout'],
     ],
     // ...

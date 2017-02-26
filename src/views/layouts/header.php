@@ -18,10 +18,10 @@ NavBar::begin([
     ],
 ]);
 $menuItems = [
-    ['label' => 'Home', 'url' => isset($this->params['homeUrl']) ? $this->params['homeUrl'] : ['/site/index']], ///[yii2-admin release version 2.2.0 (view params)]
+    ['label' => 'Home', 'url' => \Yii::$app->homeUrl], ///[yii2-admin release version 2.2.0 (view params)]
 ];
 if (Yii::$app->user->isGuest) {
-    $menuItems[] = ['label' => 'Login', 'url' => isset($this->params['loginUrl']) ? $this->params['loginUrl'] : ['/site/login']];   ///[yii2-admin release version 2.2.0 (view params)]
+    $menuItems[] = ['label' => 'Login', 'url' => \Yii::$app->user->loginUrl];   ///[yii2-admin release version 2.2.0 (view params)]
 } else {
     $menuItems[] = '<li>'
         . Html::beginForm(isset($this->params['logoutUrl']) ? $this->params['logoutUrl'] : ['/site/logout'], 'post')    ///[yii2-admin release version 2.2.0 (view params)]
