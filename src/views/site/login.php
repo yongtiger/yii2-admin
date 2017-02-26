@@ -9,8 +9,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->registerCss(".site-login { width: 360px; margin: 7% auto; }");
-
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>

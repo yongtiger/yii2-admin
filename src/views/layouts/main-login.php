@@ -8,6 +8,7 @@
 use yii\helpers\Html;
 use common\widgets\Alert;
 
+$this->registerCss(".site-login { width: 360px; margin: 7% auto; }");
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
