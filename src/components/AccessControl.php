@@ -132,7 +132,7 @@ class AccessControl extends \yii\base\ActionFilter
                 ///[yii2-admin 1.1.0 (admin:permission_access_backend)]
                 Yii::$app->user->on(yii\web\User::EVENT_BEFORE_LOGIN, function ($event) {
                     Yii::$app->user->setIdentity($event->identity);
-                    if (!Yii::$app->user->can('permission_access_backend')) {
+                    if (!Yii::$app->user->can('permission_access_' . Yii::$app->id)) {
                         Yii::$app->getSession()->setFlash('error', Yii::t('yii', 'You are not allowed to perform this action.'));
                         //$this->goHome()->send();  ///while in controller!
                         // Yii::$app->getResponse()->redirect(Yii::$app->user->loginUrl)->send();   ///ok!
