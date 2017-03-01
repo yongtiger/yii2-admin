@@ -7,7 +7,6 @@
 
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
-use common\widgets\Alert;
 use yongtiger\admin\components\MenuHelper;
 
 $this->registerCss(<<<CSS
@@ -39,7 +38,7 @@ CSS
 		    <?= Breadcrumbs::widget([
 		        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 		    ]) ?>
-		    <?= Alert::widget() ?>
+		    <?= call_user_func([\Yii::$app->getModule('admin')->alertClassName, 'widget']); ?>
 		    <?= $content ?>
 	    </div>
 	</div>

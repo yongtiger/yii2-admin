@@ -6,7 +6,6 @@
  */
 
 use yii\helpers\Html;
-use common\widgets\Alert;
 
 $this->registerCss(".site-login { width: 360px; margin: 7% auto; }");
 ?>
@@ -24,7 +23,8 @@ $this->registerCss(".site-login { width: 360px; margin: 7% auto; }");
 
 <?php $this->beginBody() ?>
 
-	<?= Alert::widget() ?>
+	<?= call_user_func([\Yii::$app->getModule('admin')->alertClassName, 'widget']); ?>
+
     <?= $content ?>
 
 <?php $this->endBody() ?>

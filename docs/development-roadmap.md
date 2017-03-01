@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.5.0 (call_user_func([\Yii::$app->getModule('admin')->alertClassName, 'widget']))
+
+
 ## 2.4.0 (fix# permission_access_bakcend)
 
 

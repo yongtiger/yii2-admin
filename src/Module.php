@@ -49,6 +49,11 @@ class Module extends \yii\base\Module
     public $defaultUrlLabel;
 
     /**
+     * @var string
+     */
+    public $alertClassName = 'common\widgets\Alert';
+
+    /**
      * @inheritdoc
      */
     public function init()
