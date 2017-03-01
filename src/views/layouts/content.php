@@ -3,7 +3,7 @@
 /**
  * @var $this yii\base\View
  * @var $content string
- * @var $alertClassName callable
+ * @var $this->params['alertClassName'] callable
  */
 
 use yii\widgets\Breadcrumbs;
@@ -39,7 +39,7 @@ CSS
 		    <?= Breadcrumbs::widget([
 		        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 		    ]) ?>
-		    <?= call_user_func([$alertClassName, 'widget']); ?>
+		    <?= call_user_func([isset($this->params['alertClassName']) ? $this->params['alertClassName'] : ['common/widgets/Alert'], 'widget']); ?>
 		    <?= $content ?>
 	    </div>
 	</div>
