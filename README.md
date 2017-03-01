@@ -1,4 +1,4 @@
-# Yii2 admin release version 2.6.0 (typo)
+# Yii2 admin release version 2.6.1 (call_user_func([$alertClassName, 'widget']))
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 

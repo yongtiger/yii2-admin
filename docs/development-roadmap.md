@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.1 (call_user_func([$alertClassName, 'widget']))
+
+
 ## 2.6.0 (typo)
 
 

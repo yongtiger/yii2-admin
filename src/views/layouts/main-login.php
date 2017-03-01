@@ -3,6 +3,7 @@
 /**
  * @var $this yii\base\View
  * @var $content string
+ * @var $alertClassName callable
  */
 
 use yii\helpers\Html;
@@ -23,7 +24,7 @@ $this->registerCss(".site-login { width: 360px; margin: 7% auto; }");
 
 <?php $this->beginBody() ?>
 
-	<?= call_user_func([\Yii::$app->getModule('admin')->alertClassName, 'widget']); ?>
+	<?= call_user_func([$alertClassName, 'widget']); ?>
 
     <?= $content ?>
 
