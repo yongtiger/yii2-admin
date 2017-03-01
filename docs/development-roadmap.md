@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.0 (typo)
+
+
 ## 2.5.0 (call_user_func([\Yii::$app->getModule('admin')->alertClassName, 'widget']))
 
 
