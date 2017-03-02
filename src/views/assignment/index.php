@@ -3,14 +3,17 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel yongtiger\admin\models\searchs\Assignment */
 /* @var $usernameField string */
 /* @var $extraColumns string[] */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
-$this->title = Yii::t('rbac-admin', 'Assignments');
+$this->title = Module::t('message', 'Assignments');
 $this->params['breadcrumbs'][] = $this->title;
 
 $columns = [

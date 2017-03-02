@@ -13,9 +13,9 @@
 namespace yongtiger\admin\controllers;
 
 use Yii;
-use yongtiger\admin\models\Route;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yongtiger\admin\models\Route;
 
 /**
  * Class RuleController

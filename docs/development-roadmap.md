@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.2 (view params & i18n)
+
+
 ## 2.6.1 (call_user_func([$alertClassName, 'widget']))
 
 

@@ -1,14 +1,17 @@
 <?php
 
 use yii\helpers\Html;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\Menu */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
-$this->title = Yii::t('rbac-admin', 'Update Menu') . ': ' . ' ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Menus'), 'url' => ['index']];
+$this->title = Module::t('message', 'Update Menu') . ': ' . ' ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Menus'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('rbac-admin', 'Update');
+$this->params['breadcrumbs'][] = Module::t('message', 'Update');
 ?>
 <div class="menu-update">
 

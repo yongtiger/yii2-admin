@@ -13,11 +13,11 @@
 namespace yongtiger\admin\controllers;
 
 use Yii;
-use yongtiger\admin\models\Assignment;
-use yongtiger\admin\models\searchs\Assignment as AssignmentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yongtiger\admin\models\Assignment;
+use yongtiger\admin\models\searchs\Assignment as AssignmentSearch;
 
 /**
  * AssignmentController implements the CRUD actions for Assignment model.
@@ -67,7 +67,6 @@ class AssignmentController extends Controller
      */
     public function actionIndex()
     {
-
         if ($this->searchClass === null) {
             $searchModel = new AssignmentSearch;
             $dataProvider = $searchModel->search(Yii::$app->getRequest()->getQueryParams(), $this->userClassName, $this->usernameField);

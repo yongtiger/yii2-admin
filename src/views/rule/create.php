@@ -1,12 +1,15 @@
 <?php
 
 use yii\helpers\Html;
+use yongtiger\admin\Module;
 
 /* @var $this  yii\web\View */
 /* @var $model yongtiger\admin\models\BizRule */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
-$this->title = Yii::t('rbac-admin', 'Create Rule');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Rules'), 'url' => ['index']];
+$this->title = Module::t('message', 'Create Rule');
+$this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Rules'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="auth-item-create">

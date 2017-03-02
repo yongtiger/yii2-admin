@@ -3,13 +3,16 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yongtiger\admin\Module;
 
 /* @var $this  yii\web\View */
 /* @var $model yongtiger\admin\models\BizRule */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel yongtiger\admin\models\searchs\BizRule */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
-$this->title = Yii::t('rbac-admin', 'Rules');
+$this->title = Module::t('message', 'Rules');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="role-index">
@@ -17,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('rbac-admin', 'Create Rule'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Module::t('message', 'Create Rule'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?=
@@ -28,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'name',
-                'label' => Yii::t('rbac-admin', 'Name'),
+                'label' => Module::t('message', 'Name'),
             ],
             ['class' => 'yii\grid\ActionColumn',],
         ],

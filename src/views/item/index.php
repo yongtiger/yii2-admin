@@ -4,15 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yongtiger\admin\components\RouteRule;
 use yongtiger\admin\components\Configs;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel yongtiger\admin\models\searchs\AuthItem */
 /* @var $context yongtiger\admin\controllers\ItemController */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
 $context = $this->context;
 $labels = $context->labels();
-$this->title = Yii::t('rbac-admin', $labels['Items']);
+$this->title = Module::t('message', $labels['Items']);
 $this->params['breadcrumbs'][] = $this->title;
 
 $rules = array_keys(Configs::authManager()->getRules());
@@ -22,7 +25,7 @@ unset($rules[RouteRule::RULE_NAME]);
 <div class="role-index">
     <h1><?= Html::encode($this->title) ?></h1>
     <p>
-        <?= Html::a(Yii::t('rbac-admin', 'Create ' . $labels['Item']), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Module::t('message', 'Create ' . $labels['Item']), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?=
     GridView::widget([
@@ -32,16 +35,16 @@ unset($rules[RouteRule::RULE_NAME]);
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'name',
-                'label' => Yii::t('rbac-admin', 'Name'),
+                'label' => Module::t('message', 'Name'),
             ],
             [
                 'attribute' => 'ruleName',
-                'label' => Yii::t('rbac-admin', 'Rule Name'),
+                'label' => Module::t('message', 'Rule Name'),
                 'filter' => $rules
             ],
             [
                 'attribute' => 'description',
-                'label' => Yii::t('rbac-admin', 'Description'),
+                'label' => Module::t('message', 'Description'),
             ],
             ['class' => 'yii\grid\ActionColumn',],
         ],

@@ -51,21 +51,6 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public function init()
-    {
-        parent::init();
-        if (!isset(Yii::$app->i18n->translations['rbac-admin'])) {
-            Yii::$app->i18n->translations['rbac-admin'] = [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'en',
-                'basePath' => '@yongtiger/admin/messages',
-            ];
-        }
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function beforeAction($action)
     {
         if (parent::beforeAction($action)) {
@@ -73,11 +58,48 @@ class Module extends \yii\base\Module
             $view = $action->controller->getView();
 
             $view->params['breadcrumbs'][] = [
-                'label' => ($this->defaultUrlLabel ?: Yii::t('rbac-admin', 'RBAC')),
+                'label' => ($this->defaultUrlLabel ?: Module::t('message', 'RBAC')),
                 'url' => ['/' . ($this->defaultUrl ?: $this->uniqueId)],
             ];
             return true;
         }
         return false;
+    }
+
+    ///[yii2-admin release version 2.6.2 (view params & i18n)]
+    /**
+     * Registers the translation files.
+     */
+    public static function registerTranslations()
+    {
+        ///[i18n]
+        ///if no setup the component i18n, use setup in this module.
+        if (!isset(Yii::$app->i18n->translations['extensions/yongtiger/yii2-admin/*']) && !isset(Yii::$app->i18n->translations['extensions/yongtiger/yii2-admin'])) {
+            Yii::$app->i18n->translations['extensions/yongtiger/yii2-admin/*'] = [
+                'class' => 'yii\i18n\PhpMessageSource',
+                'sourceLanguage' => 'en-US',
+                'basePath' => '@vendor/yongtiger/yii2-admin/src/messages',    ///default base path is '@vendor/yongtiger/yii2-admin/src/messages'
+                'fileMap' => [
+                    'extensions/yongtiger/yii2-admin/message' => 'message.php',  ///category in Module::t() is message
+                ],
+            ];
+        }
+    }
+
+    /**
+     * Translates a message. This is just a wrapper of Yii::t().
+     *
+     * @see http://www.yiiframework.com/doc-2.0/yii-baseyii.html#t()-detail
+     *
+     * @param $category
+     * @param $message
+     * @param array $params
+     * @param null $language
+     * @return string
+     */
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        static::registerTranslations(); ///[yii2-admin release version 2.6.2 (view params & i18n)]
+        return Yii::t('extensions/yongtiger/yii2-admin/' . $category, $message, $params, $language);
     }
 }

@@ -1,4 +1,4 @@
-# Yii2 admin release version 2.6.1 ($this->params['alertClassName'] callable)
+# Yii2 admin release version 2.6.2 (view params & i18n)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 

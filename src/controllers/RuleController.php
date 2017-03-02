@@ -13,13 +13,13 @@
 namespace yongtiger\admin\controllers;
 
 use Yii;
-use yongtiger\admin\models\BizRule;
 use yii\web\Controller;
-use yongtiger\admin\models\searchs\BizRule as BizRuleSearch;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yongtiger\admin\components\Helper;
 use yongtiger\admin\components\Configs;
+use yongtiger\admin\models\searchs\BizRule as BizRuleSearch;
+use yongtiger\admin\models\BizRule;
 
 /**
  * Class RuleController

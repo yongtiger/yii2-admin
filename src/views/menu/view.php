@@ -2,12 +2,15 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\Menu */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Menus'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Menus'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="menu-view">
@@ -15,12 +18,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('rbac-admin', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Module::t('message', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?=
-        Html::a(Yii::t('rbac-admin', 'Delete'), ['delete', 'id' => $model->id], [
+        Html::a(Module::t('message', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => Module::t('message', 'Are you sure to delete this item?'),
                 'method' => 'post',
             ],
         ])

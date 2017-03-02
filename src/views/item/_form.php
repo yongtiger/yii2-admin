@@ -6,6 +6,7 @@ use yii\jui\JuiAsset;
 use yii\helpers\Json;
 use yongtiger\admin\components\Configs;
 use yongtiger\admin\components\RouteRule;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\AuthItem */
@@ -43,7 +44,7 @@ $this->registerJs($js);
     </div>
     <div class="form-group">
         <?php
-        echo Html::submitButton($model->isNewRecord ? Yii::t('rbac-admin', 'Create') : Yii::t('rbac-admin', 'Update'), [
+        echo Html::submitButton($model->isNewRecord ? Module::t('message', 'Create') : Module::t('message', 'Update'), [
             'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary',
             'name' => 'submit-button'])
         ?>

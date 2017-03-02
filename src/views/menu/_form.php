@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Json;
 use yii\jui\JuiAsset;
 use yongtiger\admin\models\Menu;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\Menu */
@@ -38,7 +39,7 @@ $this->registerJs($this->render('_script.js'));
 
     <div class="form-group">
         <?=
-        Html::submitButton($model->isNewRecord ? Yii::t('rbac-admin', 'Create') : Yii::t('rbac-admin', 'Update'), ['class' => $model->isNewRecord
+        Html::submitButton($model->isNewRecord ? Module::t('message', 'Create') : Module::t('message', 'Update'), ['class' => $model->isNewRecord
                     ? 'btn btn-success' : 'btn btn-primary'])
         ?>
     </div>

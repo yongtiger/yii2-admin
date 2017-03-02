@@ -13,12 +13,12 @@
 namespace yongtiger\admin\controllers;
 
 use Yii;
-use yongtiger\admin\models\Menu;
-use yongtiger\admin\models\searchs\Menu as MenuSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yongtiger\admin\components\Helper;
+use yongtiger\admin\models\Menu;
+use yongtiger\admin\models\searchs\Menu as MenuSearch;
 
 /**
  * MenuController implements the CRUD actions for Menu model.

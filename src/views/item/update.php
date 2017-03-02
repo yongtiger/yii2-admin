@@ -1,17 +1,20 @@
 <?php
 
 use yii\helpers\Html;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $model yongtiger\admin\models\AuthItem */
 /* @var $context yongtiger\admin\controllers\ItemController */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
 $context = $this->context;
 $labels = $context->labels();
-$this->title = Yii::t('rbac-admin', 'Update ' . $labels['Item']) . ': ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', $labels['Items']), 'url' => ['index']];
+$this->title = Module::t('message', 'Update ' . $labels['Item']) . ': ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => Module::t('message', $labels['Items']), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->name]];
-$this->params['breadcrumbs'][] = Yii::t('rbac-admin', 'Update');
+$this->params['breadcrumbs'][] = Module::t('message', 'Update');
 ?>
 <div class="auth-item-update">
     <h1><?= Html::encode($this->title) ?></h1>

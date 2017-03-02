@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yongtiger\admin\Module;
 
 /* @var $this  yii\web\View */
 /* @var $model yongtiger\admin\models\BizRule */
@@ -18,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?php
-        echo Html::submitButton($model->isNewRecord ? Yii::t('rbac-admin', 'Create') : Yii::t('rbac-admin', 'Update'), [
+        echo Html::submitButton($model->isNewRecord ? Module::t('message', 'Create') : Module::t('message', 'Update'), [
             'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary'])
         ?>
     </div>

@@ -2,11 +2,14 @@
 
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yongtiger\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $routes [] */
+/* @var $this->title string */
+/* @var $this->params['breadcrumbs'] array */
 
-$this->title = Yii::t('rbac-admin', 'Routes');
+$this->title = Module::t('message', 'Routes');
 $this->params['breadcrumbs'][] = $this->title;
 
 $opts = Json::htmlEncode([
@@ -20,13 +23,12 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
 <div class="row">
     <div class="col-sm-11">
         <div class="input-group">
-            <input id="inp-route" type="text" class="form-control"
-                   placeholder="<?=Yii::t('rbac-admin', 'New route(s)');?>">
+            <input id="inp-route" type="text" class="form-control" placeholder="<?=Module::t('message', 'New route(s)');?>">
             <span class="input-group-btn">
-                <?=Html::a(Yii::t('rbac-admin', 'Add') . $animateIcon, ['create'], [
-    'class' => 'btn btn-success',
-    'id' => 'btn-new',
-]);?>
+                <?=Html::a(Module::t('message', 'Add') . $animateIcon, ['create'], [
+                    'class' => 'btn btn-success',
+                    'id' => 'btn-new',
+                ]);?>
             </span>
         </div>
     </div>
@@ -35,13 +37,12 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
 <div class="row">
     <div class="col-sm-5">
         <div class="input-group">
-            <input class="form-control search" data-target="available"
-                   placeholder="<?=Yii::t('rbac-admin', 'Search for available');?>">
+            <input class="form-control search" data-target="available" placeholder="<?=Module::t('message', 'Search for available');?>">
             <span class="input-group-btn">
                 <?=Html::a('<span class="glyphicon glyphicon-refresh"></span>', ['refresh'], [
-    'class' => 'btn btn-default',
-    'id' => 'btn-refresh',
-]);?>
+                    'class' => 'btn btn-default',
+                    'id' => 'btn-refresh',
+                ]);?>
             </span>
         </div>
         <select multiple size="20" class="form-control list" data-target="available"></select>
@@ -49,19 +50,18 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
     <div class="col-sm-1">
         <br><br>
         <?=Html::a('&gt;&gt;' . $animateIcon, ['assign'], [
-    'class' => 'btn btn-success btn-assign',
-    'data-target' => 'available',
-    'title' => Yii::t('rbac-admin', 'Assign'),
-]);?><br><br>
+            'class' => 'btn btn-success btn-assign',
+            'data-target' => 'available',
+            'title' => Module::t('message', 'Assign'),
+        ]);?><br><br>
         <?=Html::a('&lt;&lt;' . $animateIcon, ['remove'], [
-    'class' => 'btn btn-danger btn-assign',
-    'data-target' => 'assigned',
-    'title' => Yii::t('rbac-admin', 'Remove'),
-]);?>
+            'class' => 'btn btn-danger btn-assign',
+            'data-target' => 'assigned',
+            'title' => Module::t('message', 'Remove'),
+        ]);?>
     </div>
     <div class="col-sm-5">
-        <input class="form-control search" data-target="assigned"
-               placeholder="<?=Yii::t('rbac-admin', 'Search for assigned');?>">
+        <input class="form-control search" data-target="assigned" placeholder="<?=Module::t('message', 'Search for assigned');?>">
         <select multiple size="20" class="form-control list" data-target="assigned"></select>
     </div>
 </div>

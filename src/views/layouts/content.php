@@ -3,6 +3,7 @@
 /**
  * @var $this yii\base\View
  * @var $content string
+ * @var $this->params['breadcrumbs'] array
  * @var $this->params['alertClassName'] callable
  */
 

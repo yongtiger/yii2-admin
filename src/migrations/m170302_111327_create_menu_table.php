@@ -8,7 +8,7 @@ use yongtiger\admin\components\Configs;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-class m140602_111327_create_menu_table extends \yii\db\Migration
+class m170302_111327_create_menu_table extends \yii\db\Migration
 {
 
     /**
@@ -39,9 +39,9 @@ class m140602_111327_create_menu_table extends \yii\db\Migration
         $this->insert($menuTable,['id'=>'4','name'=>'Role','parent'=>'1','route'=>'@app-backend/admin/role/index','order'=>3,'data'=>null);
         $this->insert($menuTable,['id'=>'5','name'=>'Assignment','parent'=>'1','route'=>'@app-backend/admin/assignment/index','order'=>4,'data'=>null);
         $this->insert($menuTable,['id'=>'6','name'=>'Menu','parent'=>'1','route'=>'@app-backend/admin/menu/index','order'=>5,'data'=>null);
-        $this->insert($menuTable,['id'=>'7','name'=>'Gii','parent'=>null,'route'=>'@app-backend/gii/default/index','order'=>2,'data'=>0x7B2269636F6E223A202266612066612D66696C652D636F64652D6F222C202276697369626C65223A20747275657D);
-        $this->insert($menuTable,['id'=>'8','name'=>'Debug','parent'=>null,'route'=>'@app-backend/debug/default/index','order'=>3,'data'=>0x7B2269636F6E223A202266612066612D64617368626F617264222C202276697369626C65223A20747275657D);
-
+        $this->insert($menuTable,['id'=>'7','name'=>'User','parent'=>null,'route'=>'@app-backend/user/user/index','order'=>2,'data'=>0x7B2269636F6E223A202266612066612D64617368626F617264222C202276697369626C65223A20747275657D);
+        $this->insert($menuTable,['id'=>'88','name'=>'Gii','parent'=>null,'route'=>'@app-backend/gii/default/index','order'=>88,'data'=>0x7B2269636F6E223A202266612066612D66696C652D636F64652D6F222C202276697369626C65223A20747275657D);
+        $this->insert($menuTable,['id'=>'99','name'=>'Debug','parent'=>null,'route'=>'@app-backend/debug/default/index','order'=>99,'data'=>0x7B2269636F6E223A202266612066612D64617368626F617264222C202276697369626C65223A20747275657D);
     }
 
     /**
