@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.3 (add settings menu)
+
+
 ## 2.6.2 (view params & i18n)
 
 
