@@ -15,8 +15,9 @@ namespace yongtiger\admin\models\searchs;
 use Yii;
 use yii\base\Model;
 use yii\data\ArrayDataProvider;
-use yongtiger\admin\components\Configs;
 use yii\rbac\Item;
+use yongtiger\admin\components\Configs;
+use yongtiger\admin\Module;
 
 /**
  * AuthItemSearch represents the model behind the search form about AuthItem.
@@ -50,12 +51,12 @@ class AuthItem extends Model
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('rbac-admin', 'Name'),
-            'item_name' => Yii::t('rbac-admin', 'Name'),
-            'type' => Yii::t('rbac-admin', 'Type'),
-            'description' => Yii::t('rbac-admin', 'Description'),
-            'ruleName' => Yii::t('rbac-admin', 'Rule Name'),
-            'data' => Yii::t('rbac-admin', 'Data'),
+            'name' => Module::t('message', 'Name'),
+            'item_name' => Module::t('message', 'Item Name'),
+            'type' => Module::t('message', 'Type'),
+            'description' => Module::t('message', 'Description'),
+            'ruleName' => Module::t('message', 'Rule Name'),
+            'data' => Module::t('message', 'Data'),
         ];
     }
 

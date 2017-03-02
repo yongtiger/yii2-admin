@@ -15,6 +15,7 @@ namespace yongtiger\admin\models\searchs;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yongtiger\admin\Module;
 
 /**
  * AssignmentSearch represents the model behind the search form about Assignment.
@@ -42,9 +43,9 @@ class Assignment extends Model
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('rbac-admin', 'ID'),
-            'username' => Yii::t('rbac-admin', 'Username'),
-            'name' => Yii::t('rbac-admin', 'Name'),
+            'id' => Module::t('message', 'ID'),
+            'username' => Module::t('message', 'Username'),
+            'name' => Module::t('message', 'Name'),
         ];
     }
 

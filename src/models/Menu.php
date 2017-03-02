@@ -13,8 +13,9 @@
 namespace yongtiger\admin\models;
 
 use Yii;
-use yongtiger\admin\components\Configs;
 use yii\db\Query;
+use yongtiger\admin\components\Configs;
+use yongtiger\admin\Module;
 
 /**
  * This is the model class for table "menu".
@@ -104,13 +105,13 @@ class Menu extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('rbac-admin', 'ID'),
-            'name' => Yii::t('rbac-admin', 'Name'),
-            'parent' => Yii::t('rbac-admin', 'Parent'),
-            'parent_name' => Yii::t('rbac-admin', 'Parent Name'),
-            'route' => Yii::t('rbac-admin', 'Route'),
-            'order' => Yii::t('rbac-admin', 'Order'),
-            'data' => Yii::t('rbac-admin', 'Data'),
+            'id' => Module::t('message', 'ID'),
+            'name' => Module::t('message', 'Name'),
+            'parent' => Module::t('message', 'Parent'),
+            'parent_name' => Module::t('message', 'Parent Name'),
+            'route' => Module::t('message', 'Route'),
+            'order' => Module::t('message', 'Order'),
+            'data' => Module::t('message', 'Data'),
         ];
     }
 

@@ -18,6 +18,7 @@ use yii\data\ArrayDataProvider;
 use yongtiger\admin\models\BizRule as MBizRule;
 use yongtiger\admin\components\RouteRule;
 use yongtiger\admin\components\Configs;
+use yongtiger\admin\Module;
 
 /**
  * Class BizRule
@@ -44,7 +45,7 @@ class BizRule extends Model
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('rbac-admin', 'Name'),
+            'name' => Module::t('message', 'Name'),
         ];
     }
 

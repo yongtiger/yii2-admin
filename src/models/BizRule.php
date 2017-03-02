@@ -15,6 +15,7 @@ namespace yongtiger\admin\models;
 use Yii;
 use yii\rbac\Rule;
 use yongtiger\admin\components\Configs;
+use yongtiger\admin\Module;
 
 /**
  * Model BizRule
@@ -81,12 +82,12 @@ class BizRule extends \yii\base\Model
     public function classExists()
     {
         if (!class_exists($this->className)) {
-            $message = Yii::t('rbac-admin', "Unknown class '{class}'", ['class' => $this->className]);
+            $message = Module::t('message', "Unknown class '{class}'", ['class' => $this->className]);
             $this->addError('className', $message);
             return;
         }
         if (!is_subclass_of($this->className, Rule::className())) {
-            $message = Yii::t('rbac-admin', "'{class}' must extend from 'yii\rbac\Rule' or its child class", [
+            $message = Module::t('message', "'{class}' must extend from 'yii\rbac\Rule' or its child class", [
                     'class' => $this->className]);
             $this->addError('className', $message);
         }
@@ -98,8 +99,8 @@ class BizRule extends \yii\base\Model
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('rbac-admin', 'Name'),
-            'className' => Yii::t('rbac-admin', 'Class Name'),
+            'name' => Module::t('message', 'Name'),
+            'className' => Module::t('message', 'Class Name'),
         ];
     }
 

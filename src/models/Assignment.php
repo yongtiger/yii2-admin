@@ -12,10 +12,10 @@
 
 namespace yongtiger\admin\models;
 
-use yongtiger\admin\components\Configs;
-use yongtiger\admin\components\Helper;
 use Yii;
 use yii\base\Object;
+use yongtiger\admin\components\Configs;
+use yongtiger\admin\components\Helper;
 
 /**
  * Description of Assignment

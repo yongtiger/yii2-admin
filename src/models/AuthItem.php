@@ -12,12 +12,13 @@
 
 namespace yongtiger\admin\models;
 
-use yongtiger\admin\components\Configs;
-use yongtiger\admin\components\Helper;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Json;
 use yii\rbac\Item;
+use yongtiger\admin\components\Configs;
+use yongtiger\admin\components\Helper;
+use yongtiger\admin\Module;
 
 /**
  * This is the model class for table "tbl_auth_item".
@@ -110,10 +111,10 @@ class AuthItem extends Model
                     $rule->name = $name;
                     Configs::authManager()->add($rule);
                 } else {
-                    $this->addError('ruleName', Yii::t('rbac-admin', 'Invalid rule "{value}"', ['value' => $name]));
+                    $this->addError('ruleName', Module::t('message', 'Invalid rule "{value}"', ['value' => $name]));
                 }
             } catch (\Exception $exc) {
-                $this->addError('ruleName', Yii::t('rbac-admin', 'Rule "{value}" does not exists', ['value' => $name]));
+                $this->addError('ruleName', Module::t('message', 'Rule "{value}" does not exists', ['value' => $name]));
             }
         }
     }
@@ -124,11 +125,11 @@ class AuthItem extends Model
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('rbac-admin', 'Name'),
-            'type' => Yii::t('rbac-admin', 'Type'),
-            'description' => Yii::t('rbac-admin', 'Description'),
-            'ruleName' => Yii::t('rbac-admin', 'Rule Name'),
-            'data' => Yii::t('rbac-admin', 'Data'),
+            'name' => Module::t('message', 'Name'),
+            'type' => Module::t('message', 'Type'),
+            'description' => Module::t('message', 'Description'),
+            'ruleName' => Module::t('message', 'Rule Name'),
+            'data' => Module::t('message', 'Data'),
         ];
     }
 
