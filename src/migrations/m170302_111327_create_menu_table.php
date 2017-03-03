@@ -36,8 +36,8 @@ class m170302_111327_create_menu_table extends \yii\db\Migration
         $this->insert($menuTable,['id'=>'1','name'=>'RBAC','parent'=>null,'route'=>null,'order'=>1,'data'=>0x7B2269636F6E223A202266612066612D6C6F636B222C202276697369626C65223A20747275657D);
         $this->insert($menuTable,['id'=>'2','name'=>'Route','parent'=>'1','route'=>'@app-backend/admin/route/index','order'=>1,'data'=>null);
         $this->insert($menuTable,['id'=>'3','name'=>'Permission','parent'=>'1','route'=>'@app-backend/admin/permission/index','order'=>2,'data'=>null);
-        $this->insert($menuTable,['id'=>'4','name'=>'Rule','parent'=>'1','route'=>'@app-backend/admin/rule/index','order'=>3,'data'=>null);
-        $this->insert($menuTable,['id'=>'5','name'=>'Role','parent'=>'1','route'=>'@app-backend/admin/role/index','order'=>4,'data'=>null);
+        $this->insert($menuTable,['id'=>'4','name'=>'Role','parent'=>'1','route'=>'@app-backend/admin/role/index','order'=>3,'data'=>null);
+        $this->insert($menuTable,['id'=>'5','name'=>'Rule','parent'=>'1','route'=>'@app-backend/admin/rule/index','order'=>4,'data'=>null);
         $this->insert($menuTable,['id'=>'6','name'=>'Assignment','parent'=>'1','route'=>'@app-backend/admin/assignment/index','order'=>5,'data'=>null);
         $this->insert($menuTable,['id'=>'7','name'=>'Menu','parent'=>'1','route'=>'@app-backend/admin/menu/index','order'=>6,'data'=>null);
         $this->insert($menuTable,['id'=>'8','name'=>'User','parent'=>null,'route'=>'@app-backend/user/user/index','order'=>7,'data'=>0x7B2269636F6E223A202266612066612D75736572222C202276697369626C65223A20747275657D);
