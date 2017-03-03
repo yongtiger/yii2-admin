@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.4 (fix# add rule menu)
+
+
 ## 2.6.3 (add settings menu)
 
 
