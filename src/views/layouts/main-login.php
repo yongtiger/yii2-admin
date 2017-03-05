@@ -8,7 +8,6 @@
 
 use yii\helpers\Html;
 
-$this->registerCss(".site-login { width: 360px; margin: 7% auto; }");
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
