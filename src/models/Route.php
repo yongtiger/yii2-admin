@@ -154,7 +154,7 @@ class Route extends \yii\base\Object
                 unset($config['bootstrap']);
 
                 // Create new app using the config array.
-                $app = new yii\web\Application($config);
+                $app = new \common\components\Application($config); ///[2.6.6 (CHG# \common\components\Application)]
                 // Get all the routes of the newly created app.
                 $r = $this->getAppRoutes($app);
                 // Dump new app
