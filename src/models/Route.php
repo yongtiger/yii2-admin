@@ -145,11 +145,9 @@ class Route extends \yii\base\Object
                 $id = $this->routePrefix . ltrim(trim($id), $this->routePrefix);
 
                 ///[2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)]
-                Application::remoteAppCall('app-frontend', function($app) {
-                    // Get all the routes of the newly created app.
-                    $r = $this->getAppRoutes($app);
+                Application::remoteAppCall('app-frontend', function ($app) use (&$routes, $id)  {
                     // Prepend the app id to all routes.
-                    foreach ($r as $route) {
+                    foreach ($this->getAppRoutes($app) as $route) {
                         $routes[$id . $route] = $id . $route;
                     }
                 }, function ($config) {
@@ -175,7 +173,7 @@ class Route extends \yii\base\Object
             if ($name[0] !== $this->routePrefix) {  ///[yii2-brainbase v0.3.0 (admin:rbac):fix Added multi app (frontend/backend)]@see https://github.com/mdmsoft/yii2-admin/pull/309/
                 continue;
             }
-            
+
             $exists[] = $name;
             unset($routes[$name]);
         }
