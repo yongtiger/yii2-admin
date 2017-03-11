@@ -1,4 +1,4 @@
-# Yii2 admin release version 2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)
+# Yii2 admin release version 2.6.8 (FIX# mai-login.php: call_user_func: 'common/widgets/Alert')
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 

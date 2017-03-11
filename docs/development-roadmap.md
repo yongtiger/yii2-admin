@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.8 (FIX# mai-login.php: call_user_func: 'common/widgets/Alert')
+
+
 ## 2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)
 
 
