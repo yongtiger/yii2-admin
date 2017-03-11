@@ -18,6 +18,7 @@ use yii\helpers\VarDumper;
 use yongtiger\admin\components\Configs;
 use yongtiger\admin\components\Helper;
 use yongtiger\admin\components\RouteRule;
+use yongtiger\application\Application;
 
 /**
  * Class Route
@@ -134,43 +135,34 @@ class Route extends \yii\base\Object
             // Use advanced route scheme.
             // Set advanced route prefix.
             $this->_routePrefix = self::PREFIX_ADVANCED;
+
             // Create empty routes array.
             $routes = [];
-            // Save original app.
-            $yiiApp = Yii::$app;
+
             // Step through each configured application
             foreach ($advanced as $id => $configPaths) {
                 // Force correct id string.
                 $id = $this->routePrefix . ltrim(trim($id), $this->routePrefix);
-                // Create empty config array.
-                $config = [];
-                // Assemble configuration for current app.
-                foreach ($configPaths as $configPath) {
-                    // Merge every new configuration with the old config array.
-                    $config = yii\helpers\ArrayHelper::merge($config, require (Yii::getAlias($configPath)));
-                }
 
-                ///[yii2-brainbase v0.3.0 (admin:rbac):fix Yii debug disappear in route]
-                unset($config['bootstrap']);
+                ///[2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)]
+                Application::remoteAppCall('app-frontend', function($app) {
+                    // Get all the routes of the newly created app.
+                    $r = $this->getAppRoutes($app);
+                    // Prepend the app id to all routes.
+                    foreach ($r as $route) {
+                        $routes[$id . $route] = $id . $route;
+                    }
+                }, function ($config) {
+                    unset($config['bootstrap']);    ///[yii2-brainbase v0.3.0 (admin:rbac):fix Yii debug disappear in route]
+                    return $config;
+                });
 
-                // Create new app using the config array.
-                $app = new \common\components\Application($config); ///[2.6.6 (CHG# \common\components\Application)]
-                // Get all the routes of the newly created app.
-                $r = $this->getAppRoutes($app);
-                // Dump new app
-                unset($app);
-                // Prepend the app id to all routes.
-                foreach ($r as $route) {
-                    $routes[$id . $route] = $id . $route;
-                }
             }
-            // Switch back to original app.
-            Yii::$app = $yiiApp;
-            unset($yiiApp);
         } else {
             // Use basic route scheme.
             // Set basic route prefix
             $this->_routePrefix = self::PREFIX_BASIC;
+
             // Get basic app routes.
             $routes = $this->getAppRoutes();
         }
@@ -183,6 +175,7 @@ class Route extends \yii\base\Object
             if ($name[0] !== $this->routePrefix) {  ///[yii2-brainbase v0.3.0 (admin:rbac):fix Added multi app (frontend/backend)]@see https://github.com/mdmsoft/yii2-admin/pull/309/
                 continue;
             }
+            
             $exists[] = $name;
             unset($routes[$name]);
         }

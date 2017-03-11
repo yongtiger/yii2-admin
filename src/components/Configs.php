@@ -19,6 +19,7 @@ use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\rbac\ManagerInterface;
 use yongtiger\admin\models\Route;
+use yongtiger\application\Application;
 
 /**
  * Class Configs
@@ -144,7 +145,11 @@ class Configs extends \yii\base\Object
     public static function instance()
     {
         if (self::$_instance === null) {
-            $type = ArrayHelper::getValue(Yii::$app->params, 'yongtiger.admin.configs', []);
+
+            ///[2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)]
+            $advanced = isset(Yii::$app->params[Application::$remoteAppConfigs]) ? ['advanced' => Yii::$app->params[Application::$remoteAppConfigs]] : [];
+            $type = ArrayHelper::getValue(Yii::$app->params, 'yongtiger.admin.configs', $advanced);
+
             if (is_array($type) && !isset($type['class'])) {
                 $type['class'] = static::className();
             }

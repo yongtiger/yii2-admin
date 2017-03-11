@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)
+
+
 ## 2.6.6 (CHG# \common\components\Application)
 
 
