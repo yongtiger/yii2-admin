@@ -141,13 +141,13 @@ class Route extends \yii\base\Object
 
             // Step through each configured application
             foreach ($advanced as $id => $configPaths) {
-                // Force correct id string.
-                $id = $this->routePrefix . ltrim(trim($id), $this->routePrefix);
 
                 ///[2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)]
-                Application::remoteAppCall('app-frontend', function ($app) use (&$routes, $id)  {
+                Application::remoteAppCall($id, function ($app) use (&$routes, $id)  {
                     // Prepend the app id to all routes.
                     foreach ($this->getAppRoutes($app) as $route) {
+                        // Force correct id string.
+                        $id = $this->routePrefix . ltrim(trim($id), $this->routePrefix);
                         $routes[$id . $route] = $id . $route;
                     }
                 }, function ($config) {
