@@ -76,7 +76,11 @@ class AccessControl extends \yii\base\ActionFilter
     {
         $actionId = $action->getUniqueId();
         $user = $this->getUser();
+
         if (Helper::checkRoute('/' . $actionId, Yii::$app->getRequest()->get(), $user)) {
+
+            \yongtiger\admin\models\Log::createLog();   ///[2.7.0 (admin log)]
+
             return true;
         }
         $this->denyAccess($user);

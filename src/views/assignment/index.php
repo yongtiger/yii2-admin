@@ -14,6 +14,10 @@ use yongtiger\admin\Module;
 /* @var $this->params['breadcrumbs'] array */
 
 $this->title = Module::t('message', 'Assignments');
+$this->params['breadcrumbs'][] = [
+    'label' => ($this->context->module->defaultUrlLabel ?: Module::t('message', 'RBAC')),
+    'url' => ['/' . ($this->context->module->defaultUrl ?: $this->context->module->uniqueId)],
+];
 $this->params['breadcrumbs'][] = $this->title;
 
 $columns = [
@@ -27,6 +31,7 @@ $columns[] = [
     'class' => 'yii\grid\ActionColumn',
     'template' => '{view}'
 ];
+
 ?>
 <div class="assignment-index">
 

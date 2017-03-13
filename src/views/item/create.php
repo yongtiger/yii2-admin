@@ -12,8 +12,13 @@ use yongtiger\admin\Module;
 $context = $this->context;
 $labels = $context->labels();
 $this->title = Module::t('message', 'Create ' . $labels['Item']);
+$this->params['breadcrumbs'][] = [
+    'label' => ($this->context->module->defaultUrlLabel ?: Module::t('message', 'RBAC')),
+    'url' => ['/' . ($this->context->module->defaultUrl ?: $this->context->module->uniqueId)],
+];
 $this->params['breadcrumbs'][] = ['label' => Module::t('message', $labels['Items']), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="auth-item-create">
     <h1><?= Html::encode($this->title) ?></h1>

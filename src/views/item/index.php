@@ -16,11 +16,16 @@ use yongtiger\admin\Module;
 $context = $this->context;
 $labels = $context->labels();
 $this->title = Module::t('message', $labels['Items']);
+$this->params['breadcrumbs'][] = [
+    'label' => ($this->context->module->defaultUrlLabel ?: Module::t('message', 'RBAC')),
+    'url' => ['/' . ($this->context->module->defaultUrl ?: $this->context->module->uniqueId)],
+];
 $this->params['breadcrumbs'][] = $this->title;
 
 $rules = array_keys(Configs::authManager()->getRules());
 $rules = array_combine($rules, $rules);
 unset($rules[RouteRule::RULE_NAME]);
+
 ?>
 <div class="role-index">
     <h1><?= Html::encode($this->title) ?></h1>

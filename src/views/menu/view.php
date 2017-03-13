@@ -12,6 +12,7 @@ use yongtiger\admin\Module;
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Menus'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="menu-view">
 

@@ -36,7 +36,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $defaultRoute = 'menu';
+    public $defaultRoute = 'route';
 
     /**
      * @var string Default url for breadcrumb
@@ -47,24 +47,6 @@ class Module extends \yii\base\Module
      * @var string Default url label for breadcrumb
      */
     public $defaultUrlLabel;
-
-    /**
-     * @inheritdoc
-     */
-    public function beforeAction($action)
-    {
-        if (parent::beforeAction($action)) {
-
-            $view = $action->controller->getView();
-
-            $view->params['breadcrumbs'][] = [
-                'label' => ($this->defaultUrlLabel ?: Module::t('message', 'RBAC')),
-                'url' => ['/' . ($this->defaultUrl ?: $this->uniqueId)],
-            ];
-            return true;
-        }
-        return false;
-    }
 
     ///[yii2-admin release version 2.6.2 (view params & i18n)]
     /**

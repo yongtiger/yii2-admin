@@ -18,7 +18,10 @@ if (!empty($fullnameField)) {
 $userName = Html::encode($userName);
 
 $this->title = Module::t('message', 'Assignment') . ' : ' . $userName;
-
+$this->params['breadcrumbs'][] = [
+    'label' => ($this->context->module->defaultUrlLabel ?: Module::t('message', 'RBAC')),
+    'url' => ['/' . ($this->context->module->defaultUrl ?: $this->context->module->uniqueId)],
+];
 $this->params['breadcrumbs'][] = ['label' => Module::t('message', 'Assignments'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $userName;
 
@@ -28,6 +31,7 @@ $opts = Json::htmlEncode([
 $this->registerJs("var _opts = {$opts};");
 $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
+
 ?>
 <div class="assignment-index">
     <h1><?=$this->title;?></h1>

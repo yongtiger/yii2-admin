@@ -10,6 +10,10 @@ use yongtiger\admin\Module;
 /* @var $this->params['breadcrumbs'] array */
 
 $this->title = Module::t('message', 'Routes');
+$this->params['breadcrumbs'][] = [
+    'label' => ($this->context->module->defaultUrlLabel ?: Module::t('message', 'RBAC')),
+    'url' => ['/' . ($this->context->module->defaultUrl ?: $this->context->module->uniqueId)],
+];
 $this->params['breadcrumbs'][] = $this->title;
 
 $opts = Json::htmlEncode([
@@ -18,6 +22,7 @@ $opts = Json::htmlEncode([
 $this->registerJs("var _opts = {$opts};");
 $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
+
 ?>
 <h1><?=Html::encode($this->title);?></h1>
 <div class="row">

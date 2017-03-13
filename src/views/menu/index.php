@@ -13,6 +13,7 @@ use yongtiger\admin\Module;
 
 $this->title = Module::t('message', 'Menus');
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="menu-index">
 

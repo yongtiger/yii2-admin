@@ -13,7 +13,12 @@ use yongtiger\admin\Module;
 /* @var $this->params['breadcrumbs'] array */
 
 $this->title = Module::t('message', 'Rules');
+$this->params['breadcrumbs'][] = [
+    'label' => ($this->context->module->defaultUrlLabel ?: Module::t('message', 'RBAC')),
+    'url' => ['/' . ($this->context->module->defaultUrl ?: $this->context->module->uniqueId)],
+];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="role-index">
 

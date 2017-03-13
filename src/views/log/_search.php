@@ -4,14 +4,12 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yongtiger\admin\Module;
 
-/**
- * @var yii\web\View $this
- * @var yongtiger\admin\models\searchs\Menu $model
- * @var yii\widgets\ActiveForm $form
- */
+/* @var $this yii\web\View */
+/* @var $model yongtiger\admin\models\searchs\Log */
+/* @var $form yii\widgets\ActiveForm */
 
 ?>
-<div class="menu-search">
+<div class="log-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -20,13 +18,13 @@ use yongtiger\admin\Module;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name') ?>
-
-    <?= $form->field($model, 'parent') ?>
-
     <?= $form->field($model, 'route') ?>
 
-    <?= $form->field($model, 'data') ?>
+    <?= $form->field($model, 'description') ?>
+
+    <?= $form->field($model, 'user_id') ?>
+
+    <?= $form->field($model, 'created_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Module::t('message', 'Search'), ['class' => 'btn btn-primary']) ?>

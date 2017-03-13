@@ -19,6 +19,56 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    /**
+     * Controllers
+     */
+    ///\vendor\yongtiger\yii2-admin\src\controllers\LogController.php
+    'Successfully created.' => '创建成功。',
+    'Successfully updated.' => '更新成功。',
+    'Successfully deleted.' => '删除成功。',
+    'Failed to delete!' => '删除失败！',
+    'Deleted {0} logs.' => '共删除了 {0} 个系统操作记录。',
+
+    /**
+     * Models
+     */
+    ///\vendor\yongtiger\yii2-admin\src\models\Log.php
+    'Route' => '路由',
+    'Description' => '描述',
+    'Created At' => '创建时间',
+    'Updated At' => '更新时间',
+
+    /**
+     * Views
+     */
+    ///\vendor\yongtiger\yii2-admin\src\views\log\index.php
+    'Create' => '创建',
+    'Update' => '更新',
+    'Batch Delete' => '批量删除',
+    'Are you sure you want to delete? This is a non-recoverable operation!' => '您确定要删除吗？此操作不可恢复！',
+    'Log List' => '系统操作记录列表',
+
+    ///\vendor\yongtiger\yii2-admin\src\views\log\_search.php
+    'Search' => '搜索',
+    'Reset' => '重置',
+
+    ///\vendor\yongtiger\yii2-admin\src\views\log\create.php
+    'Create Log' => '创建系统操作记录',
+
+    ///\vendor\yongtiger\yii2-admin\src\views\log\update.php
+    'Update Log' => '更新系统操作记录',
+
+    ///\vendor\yongtiger\yii2-admin\src\views\log\_form.php
+
+    ///\vendor\yongtiger\yii2-admin\src\views\log\view.php
+    'View Log' => '查看系统操作记录',
+    'Are you sure you want to delete this item?' => '您确定要删除此项吗？',
+    'Delete' => '删除',
+
+
+    /**
+     * Others
+     */
     'Home' => '首页',
     'Login' => '登陆',
     'Logout' => '退出',

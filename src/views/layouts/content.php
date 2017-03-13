@@ -20,7 +20,6 @@ CSS
 );
 
 ?>
-
 <div class="container">
 	<div class="site-index">
 	    <div class="col-sm-3">

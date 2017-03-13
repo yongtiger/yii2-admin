@@ -26,8 +26,8 @@ $js = <<<JS
 JS;
 JuiAsset::register($this);
 $this->registerJs($js);
-?>
 
+?>
 <div class="auth-item-form">
     <?php $form = ActiveForm::begin(['id' => 'item-form']); ?>
     <div class="row">

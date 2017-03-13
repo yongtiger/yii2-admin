@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.7.0 (admin log)
+
+
 ## 2.6.10 (FIX# content.php: call_user_func: 'common/widgets/Alert')
 
 

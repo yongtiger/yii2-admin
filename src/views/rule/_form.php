@@ -7,8 +7,8 @@ use yongtiger\admin\Module;
 /* @var $this  yii\web\View */
 /* @var $model yongtiger\admin\models\BizRule */
 /* @var $form ActiveForm */
-?>
 
+?>
 <div class="auth-item-form">
 
     <?php $form = ActiveForm::begin(); ?>
