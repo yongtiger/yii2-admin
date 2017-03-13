@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.6.10 (FIX# content.php: call_user_func: 'common/widgets/Alert')
+
+
 ## 2.6.9 (CHG# layouts/footer.php)
 
 
