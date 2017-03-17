@@ -1,5 +1,8 @@
 # Development roadmap
 
+## 2.7.1 (CHG# \views\layouts\footer.php:TimeZone::timezone_format)
+
+
 ## 2.7.0 (admin log)
 
 
