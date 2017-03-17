@@ -1,4 +1,4 @@
-# Yii2 admin release version 2.7.1 (CHG# \views\layouts\footer.php:TimeZone::timezone_format)
+# Yii2 admin release version 2.7.2 (CHG# yongtiger.admin.configs:log)
 
 [![Latest Stable Version](https://poser.pugx.org/yongtiger/yii2-admin/v/stable)](https://packagist.org/packages/yongtiger/yii2-admin)
 [![Total Downloads](https://poser.pugx.org/yongtiger/yii2-admin/downloads)](https://packagist.org/packages/yongtiger/yii2-admin) 

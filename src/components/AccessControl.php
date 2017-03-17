@@ -17,6 +17,8 @@ use yii\di\Instance;
 use yii\base\Module;
 use yii\web\User;
 use yii\web\ForbiddenHttpException;
+use yii\helpers\ArrayHelper;
+use yongtiger\application\Application;
 
 /**
  * Access Control Filter (ACF) is a simple authorization method that is best used by applications that only need some simple access control. 
@@ -79,7 +81,10 @@ class AccessControl extends \yii\base\ActionFilter
 
         if (Helper::checkRoute('/' . $actionId, Yii::$app->getRequest()->get(), $user)) {
 
-            // \yongtiger\admin\models\Log::createLog();   ///[2.7.0 (admin log)]///?????enable/disable
+            ///[2.7.2 (CHG# yongtiger.admin.configs:log)]
+            if (is_array(Configs::instance()->log) && in_array(Yii::$app->id, Configs::instance()->log)) {
+                \yongtiger\admin\models\Log::createLog();   ///[2.7.0 (admin log)]
+            }
 
             return true;
         }

@@ -106,6 +106,17 @@ class Configs extends \yii\base\Object
     public $routePrefix;
     ///[http://www.brainbook.cc]
     
+    ///[2.7.2 (CHG# yongtiger.admin.configs:log)]
+    /**
+     * @var array|false
+     */
+    public $log;
+
+    /**
+     * @var array|false
+     */
+    public static $adminConfigs = 'yongtiger.admin.configs';
+    
     /**
      * @var self Instance of self
      */
@@ -148,7 +159,9 @@ class Configs extends \yii\base\Object
 
             ///[2.6.7 (CHG# advanced, \yongtiger\application\Application::remoteAppConfigs)]
             $advanced = isset(Yii::$app->params[Application::$remoteAppConfigs]) ? ['advanced' => Yii::$app->params[Application::$remoteAppConfigs]] : [];
-            $type = ArrayHelper::getValue(Yii::$app->params, 'yongtiger.admin.configs', $advanced);
+            ///[2.7.2 (CHG# yongtiger.admin.configs:log)]
+            $type = ArrayHelper::getValue(Yii::$app->params, static::$adminConfigs, []);
+            $type = ArrayHelper::merge($advanced, $type);
 
             if (is_array($type) && !isset($type['class'])) {
                 $type['class'] = static::className();

@@ -13,7 +13,7 @@ use yongtiger\admin\Module;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'route')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'route')->textInput() ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
