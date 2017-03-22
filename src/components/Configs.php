@@ -78,7 +78,7 @@ class Configs extends \yii\base\Object
     /**
      * @var string Menu table name.
      */
-    public $menuTable = '{{%menu}}';
+    public $menuTable = '{{%admin_menu}}';
 
     /**
      * @var boolean If true then AccessControl only check if route are registered.
@@ -111,6 +111,11 @@ class Configs extends \yii\base\Object
      * @var array|false
      */
     public $log;
+    ///[2.9.0 (CHG# logTable, menuTable)]
+    /**
+     * @var string Menu table name.
+     */
+    public $logTable = '{{%admin_log}}';
 
     /**
      * @var array|false

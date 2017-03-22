@@ -14,6 +14,7 @@ namespace yongtiger\admin\models;
 
 use Yii;
 use yii\helpers\Url;
+use yongtiger\admin\components\Configs;
 use yongtiger\admin\Module;
 
 /**
@@ -32,7 +33,7 @@ class Log extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%log}}';
+        return Configs::instance()->logTable;   ///[2.9.0 (CHG# logTable, menuTable)]
     }
 
     /**
