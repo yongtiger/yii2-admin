@@ -1,5 +1,10 @@
 # Development roadmap
 
+## 2.9.1 (BUG# unique validator)
+
+- `\models\AuthItem.php`
+
+
 ## 2.9.0 (CHG# logTable, menuTable)
 
 
